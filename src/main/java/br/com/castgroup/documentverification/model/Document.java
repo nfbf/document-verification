@@ -1,21 +1,14 @@
 package br.com.castgroup.documentverification.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "DOCUMENT")
 public class Document {
 
 	@Id
 	private long id;
-
-	@Column(name = "DOC_LEFT")
 	private String docLeft;
-
-	@Column(name = "DOC_RIGHT")
 	private String docRight;
 
 	public Document() {

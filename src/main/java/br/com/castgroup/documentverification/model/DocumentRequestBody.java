@@ -1,10 +1,10 @@
 package br.com.castgroup.documentverification.model;
 
-public class DocumentResponseJson {
+public class DocumentRequestBody {
 
 	private String dataJson;
 
-	public DocumentResponseJson() {
+	public DocumentRequestBody() {
 	}
 
 	public String getDataJson() {

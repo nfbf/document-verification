@@ -31,9 +31,17 @@ public class DocumentServiceImpl implements DocumentService {
 
 	}
 
-	public Document findDocument(Document document) {
+	private Document findDocument(Document document) {
 		Optional<Document> searchDocument = documentRepository.findById(document.getId());
 		return searchDocument.isPresent() ? searchDocument.get() : null;
 	}
+	
+	public String compareDocument (long id) {
+		
+		return null;
+	}
+	
+	
+	
 
 }
