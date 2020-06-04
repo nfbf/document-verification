@@ -5,7 +5,7 @@ import br.com.castgroup.documentverification.model.Document;
 
 public interface DocumentService {
 
-	void saveDocument(Document document);
+	String saveDocument(Document document);
 	String compareDocument(long id);
 
 }

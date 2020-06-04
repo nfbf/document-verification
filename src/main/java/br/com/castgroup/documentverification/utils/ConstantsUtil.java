@@ -8,5 +8,8 @@ public class ConstantsUtil {
 	public static final String POST_DOCUMENT_RIGHT = "/v1/diff/{id}/right";
 	public static final String POST_DOCUMENT_LEFT = "/v1/diff/{id}/left";
 	public static final String DOCUMENT_NOT_FOUND = "Documento não encontrado!";
+	public static final String DOCUMENT_SUCESS = "Documento salvo com sucesso!";
+	public static final String DOCUMENT_FAIL = "Não foi possível salvar o documento!";
+	
 
 }

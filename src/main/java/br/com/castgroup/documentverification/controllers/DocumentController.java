@@ -12,8 +12,6 @@ import br.com.castgroup.documentverification.model.DocumentRequestBody;
 import br.com.castgroup.documentverification.services.DocumentServiceImpl;
 import br.com.castgroup.documentverification.utils.ConstantsUtil;
 
-
- 
 @RestController
 public class DocumentController {
 
@@ -21,13 +19,13 @@ public class DocumentController {
 	private DocumentServiceImpl documentService;
 
 	@PostMapping(ConstantsUtil.POST_DOCUMENT_RIGHT)
-	public void rightDocumentPost(@RequestBody DocumentRequestBody data, @PathVariable long id) {
-		  documentService.saveDocument(new Document(id,null, data.getDataJson()));
+	public String rightDocumentPost(@RequestBody DocumentRequestBody data, @PathVariable long id) {
+		return documentService.saveDocument(new Document(id, null, data.getDataJson()));
 	}
 
 	@PostMapping(ConstantsUtil.POST_DOCUMENT_LEFT)
-	public void leftDocumentPost(@RequestBody DocumentRequestBody data, @PathVariable long id) {
-         documentService.saveDocument(new Document(id, data.getDataJson(),null));
+	public String leftDocumentPost(@RequestBody DocumentRequestBody data, @PathVariable long id) {
+		return documentService.saveDocument(new Document(id, data.getDataJson(), null));
 	}
 
 	@GetMapping(ConstantsUtil.GET_DOCUMENT)

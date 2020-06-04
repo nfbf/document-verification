@@ -17,14 +17,14 @@ public class DocumentServiceImpl implements DocumentService {
 	@Autowired
 	private DocumentRepository documentRepository;
 
-	public void saveDocument(Document document) {
+	public String saveDocument(Document document) {
 
 		Document searchDocument = findDocument(document.getId());
 
 		if (searchDocument == null)
-			documentRepository.save(document);
+			return DocumentUtil.saveDocumentMsg(documentRepository.save(document));
 		else
-			documentRepository.save(updateDocument(document));
+			return DocumentUtil.saveDocumentMsg(documentRepository.save(updateDocument(document)));
 
 	}
 
