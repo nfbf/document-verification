@@ -9,6 +9,4 @@ public class ConstantsUtil {
 	public static final String POST_DOCUMENT_LEFT = "/v1/diff/{id}/left";
 	public static final String DOCUMENT_NOT_FOUND = "Documento não encontrado!";
 
-	
-
 }

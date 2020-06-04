@@ -34,15 +34,14 @@ public class DocumentServiceImpl implements DocumentService {
 	}
 
 	public String compareDocument(long id) {
+
 		Document compareDocument = findDocument(id);
 
 		if (compareDocument != null) {
-
 			String compareDocLeft = VerifyDocumentUtil.decodeDataBase64(compareDocument.getDocLeft());
 			String compareDocRight = VerifyDocumentUtil.decodeDataBase64(compareDocument.getDocRight());
 
-			return VerifyDocumentUtil.resultCompareDocument(compareDocLeft, compareDocRight);
-
+			return VerifyDocumentUtil.resultCompareDocument(id, compareDocLeft, compareDocRight);
 		} else {
 			return ConstantsUtil.DOCUMENT_NOT_FOUND;
 		}
