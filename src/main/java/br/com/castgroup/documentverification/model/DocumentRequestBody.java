@@ -6,6 +6,14 @@ public class DocumentRequestBody {
 
 	public DocumentRequestBody() {
 	}
+	
+	public DocumentRequestBody(String dataJson) {
+		this.setDataJson(dataJson);
+	}
+	
+	public void setDataJson(String dataJson) {
+		this.dataJson = dataJson;
+	}
 
 	public String getDataJson() {
 		return dataJson;

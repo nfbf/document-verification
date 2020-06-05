@@ -29,7 +29,7 @@ public class DocumentController {
 	}
 
 	@GetMapping(ConstantsUtil.GET_DOCUMENT)
-	public String documentGet(@PathVariable("id") Long id) {
+	public String documentGet(@PathVariable  long id) {
 		return documentService.compareDocument(id);
 	}
 

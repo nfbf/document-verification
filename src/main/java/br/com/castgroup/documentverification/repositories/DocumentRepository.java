@@ -6,6 +6,9 @@ import org.springframework.stereotype.Repository;
 import br.com.castgroup.documentverification.model.Document;
 
 @Repository
-public interface DocumentRepository extends JpaRepository<Document, Long> { }
+public interface DocumentRepository extends JpaRepository<Document, Long> {
+	
+	Document findById(long id);
+}
 
 

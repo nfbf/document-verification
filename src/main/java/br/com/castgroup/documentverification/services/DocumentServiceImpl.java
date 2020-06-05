@@ -1,7 +1,5 @@
 package br.com.castgroup.documentverification.services;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,7 +19,7 @@ public class DocumentServiceImpl implements DocumentService {
 
 		Document searchDocument = findDocument(document.getId());
 
-		if (searchDocument == null)
+		if (searchDocument.getId() ==0)
 			return DocumentUtil.saveDocumentMsg(documentRepository.save(document));
 		else
 			return DocumentUtil.saveDocumentMsg(documentRepository.save(updateDocument(document)));
@@ -32,7 +30,7 @@ public class DocumentServiceImpl implements DocumentService {
 
 		Document compareDocument = findDocument(id);
 
-		if (compareDocument != null) {
+		if (compareDocument.getDocLeft() != null && compareDocument.getDocRight() != null) {
 			String compareDocLeft = DocumentUtil.decodeDataBase64(compareDocument.getDocLeft());
 			String compareDocRight = DocumentUtil.decodeDataBase64(compareDocument.getDocRight());
 
@@ -43,9 +41,10 @@ public class DocumentServiceImpl implements DocumentService {
 		}
 	}
 
-	private Document findDocument(long id) {
-		Optional<Document> searchDocument = documentRepository.findById(id);
-		return searchDocument.isPresent() ? searchDocument.get() : null;
+	public Document findDocument(long id) {
+		Document searchDocument = documentRepository.findById(id);
+		return searchDocument == null ? new Document() : searchDocument;
+
 	}
 
 	private Document updateDocument(Document document) {

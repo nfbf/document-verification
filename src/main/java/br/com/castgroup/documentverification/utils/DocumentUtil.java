@@ -8,7 +8,7 @@ public class DocumentUtil {
 
 	public static String saveDocumentMsg(Document document) {
 
-		return document == null ? ConstantsUtil.DOCUMENT_FAIL : ConstantsUtil.DOCUMENT_SUCESS;
+		return document.getId() == 0 ? ConstantsUtil.DOCUMENT_FAIL : ConstantsUtil.DOCUMENT_SUCESS;
 
 	}
 
